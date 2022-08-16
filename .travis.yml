@@ -15,7 +15,7 @@ after_success:
   - docker build -t multi-worker ./worker
 
   # login docker cli
-  - echo "$PASSWORD" | docker login -u "$USERNAME" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push multi-client
   - docker push multi-nginx
   - docker push multi-server
